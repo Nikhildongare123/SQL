@@ -1,0 +1,25 @@
+create database banking;
+use banking;
+select * from banking;
+show tables;
+select Name , Age from banking;
+select  count(distinct Nationality) from banking;
+select distinct Nationality from banking ;
+select * from banking 
+where Occupation = 'Account Executive' 
+order by Name asc,Nationality desc;
+
+SELECT `Banking Contact`, Name 
+FROM banking 
+ORDER BY `Banking Contact`, Name ;
+
+
+DESCRIBE banking;
+
+select * from banking where Nationality = 'Asian' and name like 'G%';
+
+SELECT * FROM banking
+limit 3;
+ select * from banking 
+where `Credit card Balance` between 500 and 1000 order by `Credit Card Balance`
+limit 10 ;
