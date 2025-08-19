@@ -1,0 +1,71 @@
+create database casesampledb;
+use casesampledb;
+create table Employees ( 
+EmployeeID int primary key,
+FirstName varchar(50),
+LastName varchar(50),
+Department varchar(50),
+Salary decimal(10,2),
+JoinDate Date,
+PerformanceRating int,
+IsActive Bit );
+INSERT INTO Employees VALUES
+
+(1, 'John', 'Smith', 'IT', 75000.00, '2020-05-15', 4, 1),
+
+(2,
+
+'Sarah', 'Johnson', 'HR', 65000.00, '2019-08-22', 3, 1),
+
+(3, 'Michael', 'Williams', 'Finance', 82000.00, '2018-03-10', 5, 1),
+
+(4, 'Emily', 'Brown', 'IT', 70000.00, '2021-01-30', 2, 0),
+
+(5, 'David', 'Jones', 'Marketing', 68000.00, '2020-11-05', 4, 1),
+
+(6, 'Jessica', 'Garcia', 'Finance', 88000.00, '2017-06-18', 5, 1),
+
+(7, 'Daniel', 'Miller', 'HR', 62000.00, '2022-02-14', 3, 1),
+
+(8, 'Lisa', 'Davis', 'IT', 72000.00, '2019-09-25', 1, 0),
+
+(9, 'Robert', 'Rodriguez', 'Marketing', 71000.00, '2020-07-12', 4, 1), (10, 'Jennifer', 'Martinez', 'Finance', 95000.00, '2016-04-05', 5, 1);
+
+select * from Employees;
+
+-- syntax
+-- select firstname,lastname,salary,
+-- case
+--   when condition 1 then reulet 1
+--   when condition 2 then reulet 2
+-- .........
+-- else result
+-- end 
+-- from table_name 
+select Firstname, lastname,salary,
+case
+when salary < 65000 then "low"
+when salary between 65000 and 80000 then 'medium'
+else 'high'
+end as salary_s
+from Employees order by salary ;
+
+select * from Employees; 
+
+ select firstname , lastname,
+ case
+ 
+
+ when IsActive =1 then 'active'
+ else 'inactive'
+ end as acvive_s
+ from Employees;
+ select firstname , lastname,performancerating ,
+ case 
+ when performancerating = 5 then 'excellent'
+when  performancerating = 4 then 'good'
+when  performancerating = 3 then 'average'
+when  performancerating = 2 then 'needs'
+else 'poor'
+end as rating_p
+from Employees order by performancerating ;
