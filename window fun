@@ -1,0 +1,10 @@
+
+Aggregate fun = AVG(),SUM(),MIN(),MAX(),COUNT()
+
+Ranking fun =  ROW-NUMBAR(),RANK(),DEMSE-RANK(),NTILE()
+
+Value fun =  LEAD(),LAG(),FRIST-VALUE(),LASTVALUE()
+Syntex=
+select column_names fun()over [partition by column_name]
+[order by column_name]
+from table - name;
